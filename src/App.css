@@ -9,3 +9,7 @@
 
 .how-it-works {
 }
+
+.how-it-works ol {
+  list-style: none;
+}
