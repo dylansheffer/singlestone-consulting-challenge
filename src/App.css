@@ -138,8 +138,42 @@ body::-webkit-scrollbar-thumb {
   max-width: 150rem;
   margin: 0 auto;
 }
+
 /* Navigation.js */
 .navigation {
+  background-color: var(--surface-dark);
+}
+
+.navigation nav {
+  display: flex;
+  align-items: center;
+  height: 53px;
+}
+
+.navigation .logo {
+  width: 144px;
+  fill: var(--accent);
+}
+
+/* SkipLink.js */
+.skip-link {
+  display: block;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: var(--text-light);
+}
+
+.skip-link:focus,
+.skip-link:focus-within {
+  position: relative;
+  width: auto;
+  height: auto;
+  left: 0;
+  z-index: 9999;
 }
 
 /* Hero.js */
