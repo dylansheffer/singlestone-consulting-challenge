@@ -27,7 +27,7 @@ export const HowItWorks = ({ ...props }) => {
     <>
       <section {...props} className="how-it-works">
         <h2>How It Works</h2>
-        <ol>
+        <ol className="semantic-list">
           {data.steps.map(d =>
             <li key={d.id}>
               <div>
