@@ -129,6 +129,19 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
 }
 
+.cta {
+  color: var(--text-dark);
+  background-color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 10rem;
+  padding: 0.5rem 3rem;
+  display: block;
+  width: fit-content;
+}
+
 /* --- Component Styles --- */
 
 /* Content Container */

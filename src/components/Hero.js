@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContentContainer } from './ContentContainer';
+import { Link } from '@reach/router';
 
 export const Hero = () => (
   <section className="hero">
@@ -13,6 +14,7 @@ export const Hero = () => (
       <p className="hero__content">
         What's the best way to shop for the latest video games and peripherals? How about never shopping at all? You'll get new stuff on your doorstep ― every month.
       </p>
+      <Link className="cta" to="/get-started">Get Started</Link>
     </ContentContainer>
   </section>
 );
