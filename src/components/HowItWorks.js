@@ -1,4 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { ContentContainer } from './ContentContainer';
+
+const StepNumber = ({ stepNumber, ...props }) => {
+  const formatStepNumber = (stepNumber) => stepNumber < 10 ? `0${stepNumber}` : `${stepNumber}`;
+
+  return (
+    <div {...props} className="step-number">
+      <div className="step-number__number">
+        {formatStepNumber(stepNumber)}
+      </div>
+      <hr className="step-number__divider" />
+    </div>
+  );
+};
+
+const Step = ({step, ...props}) => (
+  <div {...props} className="step">
+    {/* Hidden from a11y tree because it is redundant to screen reader users */}
+    <StepNumber  aria-hidden="true" stepNumber={step.stepNumber} />
+    <h3 className="step__title">{step.title}</h3>
+    <p className="step__content">{step.body}</p>
+  </div>
+);
 
 export const HowItWorks = ({ ...props }) => {
   const [data, setData] = useState({ steps: [] });
@@ -26,19 +49,16 @@ export const HowItWorks = ({ ...props }) => {
   return (
     <>
       <section {...props} className="how-it-works">
-        <h2>How It Works</h2>
-        <ol className="semantic-list">
-          {data.steps.map(d =>
-            <li key={d.id}>
-              <div>
-                {/* Hidden from a11y tree because it is redundant to screen reader users */}
-                <div aria-hidden="true">{d.stepNumber}</div>
-                <div>{d.title}</div>
-                <div>{d.body}</div>
-              </div>
-            </li>
-          )}
-        </ol>
+        <ContentContainer>
+          <h2 className="how-it-works__heading">How It Works</h2>
+          <ol className="how-it-works__steps semantic-list">
+            {data.steps.map(step =>
+              <li key={step.id}>
+                <Step step={step} />
+              </li>
+            )}
+          </ol>
+        </ContentContainer>
       </section>
     </>
   );

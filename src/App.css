@@ -205,9 +205,39 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* HowItWorks.js */
-.how-it-works {
+.how-it-works .content-container {
+  text-align: center;
+  margin: 0 auto;
 }
 
-.how-it-works ol {
+.how-it-works__heading {
+  margin-top: 0;
+}
+
+.how-it-works__steps {
   list-style: none;
+  justify-content: center;
+}
+
+.step {
+  max-width: 30rem;
+}
+
+.step-number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-number__number {
+  font-size: 5rem;
+}
+
+.step-number__divider {
+  width: 8rem;
+  background-color: var(--accent);
+  height: 0.3333rem;
+  margin: 1.5rem 0;
+  border: 0;
 }
