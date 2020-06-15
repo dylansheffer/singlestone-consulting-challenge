@@ -1,7 +1,8 @@
 import React from 'react';
+import { Router } from "@reach/router"
 import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { HowItWorks } from './components/HowItWorks';
+import { Home } from './pages/Home';
+
 import './App.css';
 
 function App() {
@@ -9,8 +10,9 @@ function App() {
     <div className="app">
       <Navigation />
       <main id="main">
-        <Hero />
-        <HowItWorks />
+        <Router>
+          <Home path="/" />
+        </Router>
       </main>
     </div>
   );

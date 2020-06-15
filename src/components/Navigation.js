@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { Logo } from './Logo';
 import { ContentContainer } from './ContentContainer';
 import { SkipLink } from './SkipLink';
@@ -10,9 +11,9 @@ export const Navigation = () => (
       <ContentContainer>
         <ul className="semantic-list">
           <li>
-            <a href="/" aria-label="Home">
+            <Link to="/" aria-label="Home">
               <Logo />
-            </a>
+            </Link>
           </li>
         </ul>
       </ContentContainer>
