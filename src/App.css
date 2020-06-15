@@ -178,6 +178,30 @@ body::-webkit-scrollbar-thumb {
 
 /* Hero.js */
 .hero {
+  color: var(--text-light);
+  background-image: url('./assets/photo-couch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__title {
+  margin-top: 0;
+  font-size: 4.5rem;
+}
+
+.hero__title--small {
+  font-size: 3rem;
+}
+
+.hero__content {
+  margin-bottom: 0;
+  max-width: 48rem;
+}
+
+@media screen and (min-width: 800px) {
+  .hero {
+    background-image: url('./assets/photo-couch_2x.jpg');
+  }
 }
 
 /* HowItWorks.js */
