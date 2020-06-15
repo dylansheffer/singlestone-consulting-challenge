@@ -131,6 +131,13 @@ body::-webkit-scrollbar-thumb {
 
 /* --- Component Styles --- */
 
+/* Content Container */
+
+.content-container {
+  width: 100%;
+  max-width: 150rem;
+  margin: 0 auto;
+}
 /* Navigation.js */
 .navigation {
 }
