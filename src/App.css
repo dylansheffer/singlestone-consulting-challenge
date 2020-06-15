@@ -48,8 +48,13 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
-  /* Disable Animations for people who request it */
-  @media (prefers-reduced-motion) {
+}
+
+/* Disable Animations for people who request it */
+@media (prefers-reduced-motion) {
+  *,
+  *::before,
+  *::after {
     transition: none !important;
     animation: none !important;
   }
