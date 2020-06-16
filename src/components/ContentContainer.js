@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const ContentContainer = ({children, ...props}) => <div className="content-container" { ...props }>{ children }</div>
+export const ContentContainer = ({children, className, ...props}) => <div { ...props } className={`content-container ${className}`}>{ children }</div>

@@ -206,7 +206,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 3rem;
 }
 
-.hero__content {
+.hero__text {
   margin-bottom: 0;
   max-width: 48rem;
 }
