@@ -199,6 +199,8 @@ body::-webkit-scrollbar-thumb {
 /* Hero.js */
 .hero {
   color: var(--text-light);
+  /* Background Color in case image doesn't load */
+  background-color: var(--surface-dark);
   background-image: url('./assets/photo-couch.jpg');
   background-repeat: no-repeat;
   background-size: cover;
