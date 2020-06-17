@@ -23,7 +23,7 @@ const Step = ({step, ...props}) => (
   </div>
 );
 
-export const HowItWorks = ({ ...props }) => {
+export const HowItWorks = ({ className, ...props }) => {
   const [data, setData] = useState({ steps: [] });
 
   const transformData = (data) => {
@@ -48,7 +48,7 @@ export const HowItWorks = ({ ...props }) => {
 
   return (
     <>
-      <section {...props} className="how-it-works">
+      <section {...props} className={`how-it-works ${className ? className : ''}`}>
         <ContentContainer>
           <h2 className="how-it-works__heading">How It Works</h2>
           <ol className="how-it-works__steps semantic-list">

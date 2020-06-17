@@ -89,6 +89,10 @@ video {
   max-width: 100%;
 }
 
+section {
+  padding: 4rem 0;
+}
+
 /* --- Scrollbar Styles --- */
 body::-webkit-scrollbar {
   width: 12px;
@@ -137,7 +141,9 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   border: 0;
   border-radius: 10rem;
-  padding: 0.5rem 3rem;
+  padding: 0.75rem 3rem;
+  font-size: 1.75rem;
+  font-weight: 700;
   display: block;
   width: fit-content;
 }
@@ -148,8 +154,9 @@ body::-webkit-scrollbar-thumb {
 
 .content-container {
   width: 100%;
-  max-width: 150rem;
+  max-width: 125rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Navigation.js */
@@ -195,25 +202,51 @@ body::-webkit-scrollbar-thumb {
   background-image: url('./assets/photo-couch.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 45%;
+  padding: 6rem 0;
+}
+
+.hero__content {
+  display: grid;
+  row-gap: 2rem;
 }
 
 .hero__title {
-  margin-top: 0;
+  margin: 0;
   font-size: 4.5rem;
 }
 
 .hero__title--small {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .hero__text {
-  margin-bottom: 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0;
   max-width: 48rem;
 }
 
 @media screen and (min-width: 800px) {
   .hero {
     background-image: url('./assets/photo-couch_2x.jpg');
+    background-position: 0 20%;
+  }
+
+  .hero__content {
+    grid-template-rows: 35vh repeat(3, auto);
+  }
+
+  .hero__title {
+    grid-row-start: 2;
+  }
+
+  .hero__text {
+    grid-row-start: 3;
+  }
+
+  .hero__cta {
+    grid-row-start: 4;
   }
 }
 
@@ -224,16 +257,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 .how-it-works__heading {
+  font-family: 'Lato-Regular';
   margin-top: 0;
 }
 
 .how-it-works__steps {
   list-style: none;
+  display: grid;
+  row-gap: 2rem;
   justify-content: center;
 }
 
 .step {
-  max-width: 30rem;
+  max-width: 375px;
+}
+
+.step__title {
+  font-family: 'Lato-Bold';
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  line-height: 1;
 }
 
 .step-number {
@@ -253,4 +296,16 @@ body::-webkit-scrollbar-thumb {
   height: 0.3333rem;
   margin: 1.5rem 0;
   border: 0;
+}
+
+@media (min-width: 550px) {
+  .how-it-works__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .how-it-works__steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

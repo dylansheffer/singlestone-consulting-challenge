@@ -14,7 +14,7 @@ export const Hero = () => (
       <p className="hero__text">
         What's the best way to shop for the latest video games and peripherals? How about never shopping at all? You'll get new stuff on your doorstep ― every month.
       </p>
-      <Link className="cta" to="/get-started">Get Started</Link>
+      <Link className="hero__cta cta" to="/get-started">Get Started</Link>
     </ContentContainer>
   </section>
 );
