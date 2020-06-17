@@ -250,6 +250,7 @@ body::-webkit-scrollbar-thumb {
   background-image: url('./assets/photo-couch.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  /* Background position is set to focus on the girl's face */
   background-position: 45%;
   padding: 6rem 0;
 }
@@ -277,6 +278,8 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (min-width: 800px) {
   .hero {
+    /* Opting to load the higher resolution on larger devices */
+    /* Could load higher res image on high dpi devices via  `min-resolution` media queries, but I would argue that it would be important to not load high dpi images on mobile devices in general because I don't want to take up the extra data when the image will be shrunk anyways. */
     background-image: url('./assets/photo-couch_2x.jpg');
     background-position: 0 20%;
   }
