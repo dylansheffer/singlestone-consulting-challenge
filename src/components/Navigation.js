@@ -6,6 +6,7 @@ import { SkipLink } from './SkipLink';
 
 export const Navigation = () => (
   <div className="navigation">
+    {/* Skip Link allows keyboard users to quickly skip to the main content of the page */}
     <SkipLink />
     <nav>
       <ContentContainer>
