@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ContentContainer } from './ContentContainer';
 
 const StepNumber = ({ stepNumber, ...props }) => {
+  // Prepends a 0 to the number if it below 10
   const formatStepNumber = (stepNumber) => stepNumber < 10 ? `0${stepNumber}` : `${stepNumber}`;
 
   return (
@@ -23,21 +24,28 @@ const Step = ({step, ...props}) => (
   </div>
 );
 
+export const transformData = (data) => {
+  // Sift out the unnecessary data from the original array
+  const transformedData = data.reduce((acc, curr) => {
+    const { id, stepNumber, versionContent } = curr;
+    // Sort by the date and take the latest one
+    const { title, body } = versionContent.sort((a, b) => {
+      const aDate = new Date(a.effectiveDate);
+      const bDate = new Date(b.effectiveDate);
+      return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
+    })[0];
+
+    return [{id, stepNumber, title, body }, ...acc];
+  }, []);
+
+  // Finally, sort by the step number
+  return transformedData.sort((a, b) => a.stepNumber - b.stepNumber);
+};
+
 export const HowItWorks = ({ className, ...props }) => {
   const [data, setData] = useState({ steps: [] });
 
-  const transformData = (data) => {
-    const transformedData = data.reduce((acc, curr) => {
-      const { id, stepNumber, versionContent } = curr;
-      // Sort by the date and just take the latest one
-      // TODO: test if this is actually as expected
-      const { title, body } = versionContent.sort((a, b) => a.effectiveDate - b.effectiveDate)[0];
-      return [{id, stepNumber, title, body }, ...acc];
-    }, []);
-
-    return transformedData.sort((a, b) => a.stepNumber - b.stepNumber);
-  };
-
+  // Fetch and transform the step data on component mount
   useEffect(() => {
       fetch(`https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge`)
         .then(result => result.json())
