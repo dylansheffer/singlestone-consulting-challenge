@@ -60,6 +60,7 @@ body {
   }
 }
 
+/* Make text highlight color match our accent */
 ::selection {
   color: var(--black);
   /* Setting very little opacity because Chrome will apply their own if I don't */
