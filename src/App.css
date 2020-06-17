@@ -288,6 +288,10 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
+.step__content {
+  font-size: 1.8rem;
+}
+
 .step-number__number {
   font-size: 5rem;
 }
