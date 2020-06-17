@@ -135,7 +135,7 @@ body::-webkit-scrollbar-thumb {
 
 .cta {
   color: var(--text-dark);
-  background-color: var(--accent);
+  background: var(--accent);
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
@@ -146,6 +146,46 @@ body::-webkit-scrollbar-thumb {
   font-weight: 700;
   display: block;
   width: fit-content;
+}
+
+.cta:hover,
+.cta:focus {
+  background: linear-gradient(
+    45deg,
+    rgba(71, 228, 194, 1),
+    rgba(65, 238, 250, 1),
+    rgba(62, 182, 240, 1),
+    rgba(65, 238, 250, 1),
+    rgba(71, 228, 194, 1),
+    rgba(65, 250, 157, 1),
+    rgba(62, 240, 101, 1),
+    rgba(65, 250, 157, 1),
+    rgba(71, 228, 194, 1)
+  );
+  background-size: 1000%;
+  animation: shift-gradient 24s linear infinite;
+}
+
+.cta:active {
+  font-family: 'Lato-Bold';
+}
+
+@keyframes shift-gradient {
+  0% {
+    background-position: 0%;
+  }
+  20% {
+    background-position: 50%;
+  }
+  40% {
+    background-position: 100%;
+  }
+  60% {
+    background-position: 50%;
+  }
+  80% {
+    background-position: 0%;
+  }
 }
 
 /* --- Component Styles --- */
